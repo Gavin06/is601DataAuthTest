@@ -2,8 +2,6 @@
 
 $heroku_db_url = parse_url(env('DATABASE_URL', "postgres://forge:forge@localhost:5432/forge"));
 
-use Illuminate\Support\Str;
-
 return [
 
     /*
@@ -99,6 +97,7 @@ return [
             'prefix' => '',
             'schema' => 'public',
         ],
+
     ],
 
     /*
@@ -131,7 +130,6 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'predis'),
-            'prefix' => Str::slug(env('APP_NAME', 'laravel'), '_').'_database',
         ],
 
         'default' => [
